@@ -1,6 +1,5 @@
 const express = require("express");
-const rootRouter = require("./routes/index");
-const userRouter = require("./routes/userRouter");
+const mainRouter = require("./routes/index");
 const cors = require("cors");
 
 const app = express();
@@ -8,8 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/v1", rootRouter);
-app.use("/user", userRouter);
+app.use("/api/v1", mainRouter);
 
 app.listen("3000", () => {
   console.log("Server has started in port 3000");
